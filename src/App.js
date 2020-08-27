@@ -12,15 +12,17 @@ function App({names}) {
   return (
     <Fragment>
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <ShortList names={names} shortList={shortList} setShortList={setShortList}/>
-      <NamePicker 
-        names={names} 
-        searchValue={searchValue} 
-        shortList={shortList} 
-        setShortList={setShortList}
-      />
-      <ResetSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
-      <Footer />
+      <main>
+        <ShortList names={names} shortList={shortList} setShortList={setShortList}/>
+        <NamePicker 
+          names={names} 
+          searchValue={searchValue} 
+          shortList={shortList} 
+          setShortList={setShortList}
+        />
+        <ResetSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
+        <Footer />
+      </main>
     </Fragment>
   )
 }
