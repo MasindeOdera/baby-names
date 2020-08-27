@@ -19,7 +19,7 @@ export function ShortList() {
 
     return (
         <div className="short-list">
-            <h2>{hasNames ? "Your shortlist:" : "Click on a name to add it to the shortlist."}</h2>
+            <h2>{hasNames ? "Your shortlist (Click on name to remove):" : "Click on a name to add it to the shortlist, or use the search to find a name from below."}</h2>
             {hasNames && (
                 <Fragment>
                     <NameList nameList={shortListedNames} onItemClick={removeFromShortList} />
