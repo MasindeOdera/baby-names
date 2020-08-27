@@ -1,7 +1,11 @@
 import React, { Fragment } from 'react';
 import { NameList } from './name-list';
+import { useNames } from '../providers/names';
+import { useAppState } from '../providers/app-state';
 
-export function ShortList({ names, shortList, setShortList }) {
+export function ShortList() {
+    const names = useNames();
+    const { shortList, setShortList } = useAppState();
     const shortListedNames = names.filter((entry) => 
         shortList.includes(entry.id)
     );
@@ -15,7 +19,7 @@ export function ShortList({ names, shortList, setShortList }) {
 
     return (
         <div className="short-list">
-            <h2>{hasNames ? "Your shortlist:" : "Click on a name to shortlist it."}</h2>
+            <h2>{hasNames ? "Your shortlist:" : "Click on a name to add it to the shortlist."}</h2>
             {hasNames && (
                 <Fragment>
                     <NameList nameList={shortListedNames} onItemClick={removeFromShortList} />

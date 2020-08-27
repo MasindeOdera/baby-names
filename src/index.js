@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { names } from './data';
+import { NamesProvider } from './providers/names';
+import { AppStateProvider } from './providers/app-state';
 import 'normalize-css';
 import './css/style.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App names={names}/>
+    <NamesProvider>
+      <AppStateProvider>
+        <App />
+      </AppStateProvider>
+    </NamesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
